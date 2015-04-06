@@ -29,7 +29,54 @@ KEYWORD		and|break|do|else|elseif|end|false|for|function|if|in|local|nil|not|or|
 "+"|"-"|"*"|"/"|"%"|"^"			{
 									printf("Operator\n");
 								}
-
+"=="							{
+									printf("Comparison token\n");
+								}
+"~="							{
+									printf("Comparacao aproximada\n");
+								}
+"<="							{
+									printf("minor_equal token\n");
+								}
+">="							{
+									printf("greater_equal token\n");
+								}
+"<"								{
+									printf("minor token\n");
+								}
+">"								{
+									printf("greater token\n");
+								}
+"="								{
+									printf("Atribution\n");
+								}
+"("								{
+									printf("open_par token\n");
+								}
+")"								{
+									printf("close_par token\n");
+								}
+"{"								{
+									printf("chave_aberta token\n");
+								}
+"}"								{
+									printf("chave_fechada token\n");
+								}
+"["								{
+									printf("colchete_aberto\n");
+								}
+"]"								{
+									printf("colchete_fechado\n");
+								}
+";"								{
+									printf("comma_point token\n");
+								}
+":"								{
+									printf("two_points token\n");
+								}
+","								{
+									printf("comma token\n");
+								}
 [ \t\n]+
 .								{
 									printf("Unknown symbol\n");
