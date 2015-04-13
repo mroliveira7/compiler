@@ -1,3 +1,6 @@
+/*to return the name to 'lex.yy.c' without a header file, just remove/comment the line below*/
+%option   outfile="tmp/scanner.c" header-file="tmp/scanner.h"
+
 %{
 	#include <math.h>
 %}
