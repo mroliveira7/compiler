@@ -50,9 +50,8 @@ Para manter seu fork sincronizado:
 ###Time de Desenvolvimento
 
 <!-- editem akê, si ô6 qizé-->
-* [Dinho meu amigo](mailto:lalal@gmail.com) [@mroliveira7](https://github.com/mroliveira7)
-* [Marcelino Pão e Vinho](mailto:lala@gmail.com) [@PãoEVinho](https://github.com/Marinofull)
-* [Random Randomize](none)
+* [Marcos Ricardo Oliveira](mailto:ricardo.oliveira545@gmail.com) [@mroliveira7](https://github.com/mroliveira7)
+* [Pedro Marcelino](mailto:pedromarcelino2006@hotmail.com) [@pedronovaes](https://github.com/pedronovaes)
 
 ###Mais Informações
 
