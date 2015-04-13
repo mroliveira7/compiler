@@ -1,4 +1,8 @@
+/*to return the name to 'lex.yy.c' without a header file, just remove/comment the line below*/
+%option   outfile="tmp/scanner.c" header-file="tmp/scanner.h"
+
 %{
+	#include <stdio.h>
 	#include <math.h>
 %}
 
@@ -7,14 +11,15 @@
 
 
 NUMBER 		[0-9]
-ID 			[a-z][a-z0-9]*
+STRING_L		"\"".*"\""
+ID 			[a-zA-Z][a-zA-Z0-9]*
 KEYWORD		and|break|do|else|elseif|end|false|for|function|if|in|local|nil|not|or|repeat|return|then|true|until|while
-STRING		"\""[a-z0-0]+"\""
 
 %%
 
 {NUMBER}+{ID}					{
 									printf("Error line %d: Invalid Identifier !\n",line_number);
+									scan_error = 1;
 								}
 {NUMBER}+						{
 									printf("Integer\n");
@@ -27,6 +32,9 @@ STRING		"\""[a-z0-0]+"\""
 								}
 {ID} 							{
 									printf("Identifier\n");
+								}
+{STRING_L}						{
+									printf("Constant string\n");
 								}
 "+"|"-"|"*"|"/"|"%"|"^"			{
 									printf("Operator\n");
@@ -84,6 +92,7 @@ STRING		"\""[a-z0-0]+"\""
 								}
 [ \t\n]+
 .								{
-									printf("Unknown symbol\n");
+									printf("Error line %d: Unknown symbol!\n",line_number);
+									scan_error = 1;
 								}
 %%
