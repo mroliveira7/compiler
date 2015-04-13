@@ -368,8 +368,8 @@ static void yy_fatal_error (yyconst char msg[]  );
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
 
-#define YY_NUM_RULES 25
-#define YY_END_OF_BUFFER 26
+#define YY_NUM_RULES 26
+#define YY_END_OF_BUFFER 27
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -379,10 +379,10 @@ struct yy_trans_info
 	};
 static yyconst flex_int16_t yy_accept[90] =
     {   0,
-        0,    0,   26,   24,   23,   23,    6,   14,   15,   22,
+        0,    0,   27,   25,   24,   23,    6,   14,   15,   22,
         2,   21,   20,   11,   13,   12,   18,   19,    5,    5,
         5,    5,    5,    5,    5,    5,    5,    5,    5,    5,
-        5,    5,   16,   17,   24,   23,    0,    2,    1,    9,
+        5,    5,   16,   17,   25,   24,    0,    2,    1,    9,
         7,   10,    5,    5,    5,    4,    5,    5,    5,    5,
         5,    5,    5,    5,    5,    5,    5,    5,    5,    8,
         3,    1,    5,    5,    5,    5,    5,    5,    5,    5,
@@ -800,7 +800,7 @@ case 1:
 YY_RULE_SETUP
 #line 14 "scanner.l"
 {
-									printf("Error: Invalid Identifier!\n");
+									printf("Error line %d: Invalid Identifier !\n",line_number);
 								}
 	YY_BREAK
 case 2:
@@ -954,21 +954,29 @@ case 23:
 /* rule 23 can match eol */
 YY_RULE_SETUP
 #line 80 "scanner.l"
-
+{
+									line_number++;
+								}
 	YY_BREAK
 case 24:
+/* rule 24 can match eol */
 YY_RULE_SETUP
-#line 81 "scanner.l"
-{
-									printf("Unknown symbol\n");
-								}
+#line 83 "scanner.l"
+
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
 #line 84 "scanner.l"
+{
+									printf("Unknown symbol\n");
+								}
+	YY_BREAK
+case 26:
+YY_RULE_SETUP
+#line 87 "scanner.l"
 ECHO;
 	YY_BREAK
-#line 972 "lex.yy.c"
+#line 980 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1966,6 +1974,6 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 84 "scanner.l"
+#line 87 "scanner.l"
 
 

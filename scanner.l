@@ -3,16 +3,18 @@
 %}
 
     int line_number = 1;
+    int scan_error = 0;
 
 
 NUMBER 		[0-9]
 ID 			[a-z][a-z0-9]*
 KEYWORD		and|break|do|else|elseif|end|false|for|function|if|in|local|nil|not|or|repeat|return|then|true|until|while
+STRING		"\""[a-z0-0]+"\""
 
 %%
 
 {NUMBER}+{ID}					{
-									printf("Error: Invalid Identifier!\n");
+									printf("Error line %d: Invalid Identifier !\n",line_number);
 								}
 {NUMBER}+						{
 									printf("Integer\n");
@@ -76,6 +78,9 @@ KEYWORD		and|break|do|else|elseif|end|false|for|function|if|in|local|nil|not|or|
 								}
 ","								{
 									printf("comma token\n");
+								}
+"\n"							{
+									line_number++;
 								}
 [ \t\n]+
 .								{
